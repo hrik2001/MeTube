@@ -1,0 +1,23 @@
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<h1 style="font-family:Helvetica;">MeTube</h1></br>
+<center>
+<iframe style="height:90%;width:90%;" src="https://www.youtube.com/embed/{{args['v']}}?listType=playlist&list={{args['list']}}&start={{args['start']}}" frameborder="0" allowfullscreen></iframe>
+</center>
+</br>
+<div class="container">
+<form action = "/q" method = "post" enctype=multipart/form-data>
+	<center>
+	<div class="md-form active-cyan active-cyan-2 mb-3">
+	  <input class="form-control" type="text"name='link' placeholder="Search" aria-label="Search">
+	</div>
+	</br>
+	<input type='submit' class="btn btn-primary" value='Watch Without Distraction!'>
+	</center>
+</form>
+</div>
+
+

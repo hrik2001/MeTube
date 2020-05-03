@@ -5,10 +5,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<h1 style="font-family:Helvetica;">MeTube</h1></br>
 <center>
+
+
 {%if mode%}
-<iframe style="height:90%;width:90%;"  src="https://www.youtube.com/embed/{{args['v']}}?listType=playlist&list={{args['list']}}&start={{args['timer']}}" frameborder="0" allowfullscreen></iframe>
+<iframe style="height:90%;width:90%;"  src="https://www.youtube.com/embed/{{v | safe}}?listType=playlist&list={{lis | safe}}&start={{args['timer']}}" frameborder="0" allowfullscreen></iframe>
 {%else%}
-<iframe style="height:90%;width:90%;"  src="https://www.youtube.com/embed/{{args['v']}}?start={{args['timer']}}"frameborder="0" allowfullscreen></iframe>
+<iframe style="height:90%;width:90%;"  src="https://www.youtube.com/embed/{{v | safe}}?start={{args['timer']}}"frameborder="0" allowfullscreen></iframe>
 {%endif%}
 </center>
 </br>

@@ -34,9 +34,13 @@ def watch():
         start=request.args["t"]
     else:
         start="0"
-    return render_template("views.html" , mode=mode, args = {**{"timer":start},**request.args})
+    if mode:
+        return render_template("views.html" , mode=mode, args = {**{"timer":start},**request.args} , v=request.args["v"] , lis = request.args["list"])
+    else:
+        return render_template("views.html" , mode=mode, args = {**{"timer":start},**request.args} , v=request.args["v"], lis = "")
+
 
 @app.route("/playlist")
 def watch_playlist():
-    return render_template("views_playlist.html" ,  args = {**request.args,**{"v":""}})
+    return render_template("views_playlist.html" ,  args = {**request.args,**{"v":""}} , lis=request.args["list"])
 

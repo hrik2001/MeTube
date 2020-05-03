@@ -5,7 +5,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<h1 style="font-family:Helvetica;">MeTube</h1></br>
 <center>
-<iframe style="height:90%;width:90%;" src="https://www.youtube.com/embed/{{args['v']}}?listType=playlist&list={{args['list']}}&start={{args['start']}}" frameborder="0" allowfullscreen></iframe>
+<iframe style="height:90%;width:90%;" src="https://www.youtube.com/embed/{{args['v']}}?listType=playlist&list={{lis | safe}}" frameborder="0" allowfullscreen></iframe>
 </center>
 </br>
 <div class="container">

@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, redirect
 import re
 from urllib.parse import urlparse as o
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -43,4 +44,12 @@ def watch():
 @app.route("/playlist")
 def watch_playlist():
     return render_template("views_playlist.html" ,  args = {**request.args,**{"v":""}} , lis=request.args["list"])
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'),404
+
+@app.errorhandler(500)
+def not_foound_error(error):
+    return render_template('500.html'),500
 

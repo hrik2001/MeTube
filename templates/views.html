@@ -3,9 +3,21 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<h1 style="font-family:Helvetica;">MeTube</h1></br>
-<center>
 
+  <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='me.css') }}">
+<body>
+  <center>
+	<h1 id="heading" style="font-family:Helvetica;">MeTube</h1></br>
+
+
+<label class="switch">
+
+   <input id="but" type="checkbox" unchecked>
+   <span class="slider round"></span>
+
+</label>
+
+ 
 
 {%if mode%}
 <iframe style="height:90%;width:90%;"  src="https://www.youtube.com/embed/{{v | safe}}?listType=playlist&list={{lis | safe}}&start={{args['timer']}}" frameborder="0" allowfullscreen></iframe>
@@ -17,13 +29,15 @@
 <div class="container">
 <form action = "/q" method = "post" enctype=multipart/form-data>
 	<center>
-	<div class="md-form active-cyan active-cyan-2 mb-3">
+	<div id="para" class="md-form active-cyan active-cyan-2 mb-3">
 	  <input class="form-control" type="text"name='link' placeholder="Search" aria-label="Search">
 	</div>
 	</br>
 	<input type='submit' class="btn btn-primary" value='Watch Without Distraction!'>
 	</center>
 </form>
+<script type="text/javascript" src="{{ url_for('static', filename='me.js') }}"></script>
 </div>
+</body>
 
 
